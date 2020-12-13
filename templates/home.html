@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <h1>COVID-19 Analizi</h1>
+  <div class="row">
+
+    <div class="col-4">
+        <h5><font color="red">Top 15 Ülke</font></h5>
+        <table class="table-responsive-sm table-dark">
+        <thead>
+            <tr>
+            <th scope="col">Ülke</th>
+            <th scope="col">Vaka</tr>
+                </tr>
+        </thead>
+        <tbody>
+    {% for pair in pairs %}
+    <tr>
+    <td>{{ pair[0]}}</td>
+    <td>{{ pair[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table></div>
+    <div class="col-8">
+        <h5><font color="firebrick">Dünya haritasında toplam vaka sayısı</font></h5>
+        <p>Not:test dataları üzerinde hazrılanmıştır.</p>
+        {{cmap|safe}}</div>
+
+  </div>
+</div>
+{% endblock %}
